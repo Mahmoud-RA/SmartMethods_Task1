@@ -51,7 +51,9 @@ if (isset($_POST['Save'])) {
                                 value = '".$value6."'
                             WHERE
                             Engine = '".$Engine6."';
-                            ";           
+                            ";    
+        $queryStatus = " UPDATE engines SET status='off'  " ;
+        mysqli_query($conn, $queryStatus);       
         mysqli_query($conn, $query);
         mysqli_query($conn, $query2);
         mysqli_query($conn, $query3);
@@ -112,6 +114,8 @@ if (isset($_POST['Save'])) {
                             WHERE
                             Engine = '".$Engine6."';
                             ";           
+        $queryStatus = " UPDATE engines SET status='on'  " ;
+        mysqli_query($conn, $queryStatus);
         mysqli_query($conn, $query);
         mysqli_query($conn, $query2);
         mysqli_query($conn, $query3);
