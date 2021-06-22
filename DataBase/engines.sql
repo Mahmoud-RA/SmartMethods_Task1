@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2021 at 05:50 PM
+-- Generation Time: Jun 22, 2021 at 05:36 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -30,20 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `engines` (
   `Engine` varchar(20) NOT NULL,
   `id` int(11) NOT NULL,
-  `value` int(11) NOT NULL
+  `value` int(11) NOT NULL,
+  `status` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `engines`
 --
 
-INSERT INTO `engines` (`Engine`, `id`, `value`) VALUES
-('Engine1', 3, 5),
-('Engine2', 4, 5),
-('Engine3', 5, 5),
-('Engine4', 6, 5),
-('Engine5', 7, 5),
-('Engine6', 8, 5);
+INSERT INTO `engines` (`Engine`, `id`, `value`, `status`) VALUES
+('Engine1', 3, 5, 'on'),
+('Engine2', 4, 5, 'on'),
+('Engine3', 5, 3, 'on'),
+('Engine4', 6, 5, 'on'),
+('Engine5', 7, 4, 'on'),
+('Engine6', 8, 5, 'on');
 
 --
 -- Indexes for dumped tables
