@@ -2,7 +2,7 @@
     require "conn.php";
 
 $query = "select * from engines";
-
+$query2 = "select * from rubots_directional";
 ?>
 
 
@@ -58,7 +58,30 @@ if($result=mysqli_query($conn, $query)){
 
 </div>
 
+<div class="container mx-auto my-4">
+<?php 
+    if($result=mysqli_query($conn, $query2)){
+        if(mysqli_num_rows($result)>0){
+            $str ="";
+            while($row=mysqli_fetch_array($result)){
+                $str .= "
+<div class='card card-body py-2 my-2'>
+<div class='col'>
+    The direction of the rubot is " .$row['direction']. "
 </div>
+</div>
+";
+}
+echo $str;
+}
+else {
+echo "";
+}
+
+}
+?>
+</div>
+
 
 </body>
 </html>

@@ -2,6 +2,19 @@
 
 require "conn.php";
 
+if(isset($_POST['btnValue'])) {
+    $dir = mysqli_real_escape_string($conn, $_POST['btnValue']);
+    $query = "UPDATE rubots_directional
+    SET
+        direction = '".$dir."'
+    WHERE
+        id = '0';
+        ";
+        mysqli_query($conn, $query);
+        echo "The value is set to be " . $dir;
+}
+
+
 if (isset($_POST['Save'])) {
     $value1 = mysqli_real_escape_string($conn, $_POST['value1']);
     $value2 = mysqli_real_escape_string($conn, $_POST['value2']);
